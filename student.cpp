@@ -67,3 +67,34 @@ cout<<"\n enter the branch: ";
        // admindata();
     }
 }
+void viewdata()
+{
+    fstream file("data.txt");//open the file
+    //check if such file exists or not
+    if(!file)
+    {
+        cout<<"no such file in existence";
+    }
+    cout<<endl;
+    cout<<endl;
+    cout<<"Roll \t Name \t\t\t College \t branch \t Attendance \t Physics \t Chemistry \t Maths";
+    cout<<endl;
+    cout<<endl;
+    string rollno,name,college,branch,attendance,phy,che,maths;
+    //upload all the data from the file
+    while(!file.eof())
+    {
+        getline(file,rollno,',' );
+         getline(file, name, ',');
+        getline(file, college, ',');
+        getline(file, branch, ' ');
+        getline(file, attendance, ' ');
+        getline(file, phy, ' ');
+        getline(file, che, ' ');
+        getline(file, maths, '\n');
+        cout << rollno << " \t " << name << "\t\t\t" << college << " \t\t" << branch << " \t\t" << attendance << " \t\t" << phy << " \t\t" << che << " \t\t" << maths << endl;
+        cout << endl;
+    }
+    cout<<endl;
+    file.close();
+    }
