@@ -69,7 +69,7 @@ cout<<"\n enter the branch: ";
 }
 void viewdata()
 {
-    fstream file("data.txt");//open the file
+    fstream file("data.csv");//open the file
     //check if such file exists or not
     if(!file)
     {
