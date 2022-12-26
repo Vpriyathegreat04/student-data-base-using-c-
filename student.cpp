@@ -1,7 +1,20 @@
+#include<fstream>
+#include<bits/stdc++.h>
+#include<string>
+#include<conio.h>
+#include<iostream>
+using namespace std;
 //add data
+void adddata();
+int main(){
+ adddata();
+    getch();
+    return 0;
+    
+}
 void adddata()
 {//open file
-    fstream file("data.csv",ios::out| ios::app)
+    fstream file("data.csv",ios::out| ios::app);
    //check of the file is open or not
     if(!file)
     {
@@ -42,21 +55,15 @@ cout<<"\n enter the branch: ";
     //close file
     file.close();
     //options to add the missed out data
-    cout<<"\n add missed out data? (YES/NOOO) : "
+    cout<<"\n add missed out data? (YES/NOOO) : ";
     string option;
     cin>>option;
-    if(option==YES)
+    if(option=="YES")
     {//back to adddata function
         adddata();
     }
-    else if(option==NOOO)
+    else if(option=="NOOO")
     {//back to the main menu
-        admindata();
+       // admindata();
     }
-}
-
-
-
-
-
 }
