@@ -1,13 +1,16 @@
-#include<fstream>
-#include<bits/stdc++.h>
-#include<string>
+#include <fstream>
+#include <string.h>
+#include <bits/stdc++.h>
+#include <string>
 #include<conio.h>
-#include<iostream>
+#include <stdlib.h>
 using namespace std;
 //add data
+void viewdata();
 void adddata();
 int main(){
  adddata();
+ viewdata();
     getch();
     return 0;
     
@@ -27,31 +30,32 @@ void adddata()
     string name,college,branch;
     int rollno,attendance,physics,che,maths;
     //enter the  values
-    cout <<"\n enter the name of the student : ";
+    cout <<"\n enter the rollno of the student : ";
+    cin>>rollno;
+    file<<"\n"<<rollno<<" ";
+    cout<<"\n enter the name : ";
     cin>>name;
-    file<<name<<" , ";
+    file<<name<<" ";
     cout<<"\n enter the college name: ";
     cin>>college;
-    file<<college<<",";
+    file<<college<<" ";
 
 cout<<"\n enter the branch: ";
     cin>>branch;
-    file<<branch<<",";
-    cout<<"\n enter the rollno : ";
-    cin>>rollno;
-    file<<rollno<<",";
+    file<<branch<<"  ";
+
     cout<<"\n enter the attendance percentage: "; 
     cin>>attendance;
-    file<<attendance<<",";
+    file<<attendance<<" ";
     cout<<"\n enter the physics mark: ";
     cin>>physics;
-    file<<physics<<",";
+    file<<physics<<" ";
     cout<<"\n enter the maths mark: ";
     cin>>maths;
-    file<<maths<<",";
+    file<<maths<<" ";
     cout<<"\n enter the chemistry mark: ";
     cin>>che;
-    file<<che<<",";
+    file<<che<<"  ";
     //close file
     file.close();
     //options to add the missed out data
@@ -75,26 +79,28 @@ void viewdata()
     {
         cout<<"no such file in existence";
     }
-    cout<<endl;
-    cout<<endl;
-    cout<<"Roll \t Name \t\t\t College \t branch \t Attendance \t Physics \t Chemistry \t Maths";
-    cout<<endl;
+     cout << "\n\t\t\t\t\t\t|Students Record| \n\n";
+     cout << "\n-----------------------------------------------------------------------------------------------------------------------\n" <<endl<<endl;
+    cout<<"Roll \t Name \t College \t branch \t Attendance \t Physics \t Chemistry \t Maths";
+    
     cout<<endl;
     string rollno,name,college,branch,attendance,phy,che,maths;
     //upload all the data from the file
     while(!file.eof())
     {
-        getline(file,rollno,',' );
-         getline(file, name, ',');
-        getline(file, college, ',');
+        getline(file,rollno,' ' );
+        
+         getline(file, name, ' ');
+        getline(file, college, ' ');
         getline(file, branch, ' ');
         getline(file, attendance, ' ');
         getline(file, phy, ' ');
         getline(file, che, ' ');
         getline(file, maths, '\n');
-        cout << rollno << " \t " << name << "\t\t\t" << college << " \t\t" << branch << " \t\t" << attendance << " \t\t" << phy << " \t\t" << che << " \t\t" << maths << endl;
+        cout << rollno << " " << name << "\t\t" << college << " \t\t" << branch << " \t\t" << attendance << " \t\t" << phy << " \t\t" << che << " \t\t" << maths << endl;
         cout << endl;
     }
-    cout<<endl;
+    
+    cout << "\n-----------------------------------------------------------------------------------------------------------------------" << endl;
     file.close();
     }
